@@ -30,12 +30,11 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
-#My personal
-bindsym $mod+Ctrl+p exec xfce4-screenshooter
-bindsym $mod+Ctrl+t exec telegram
-bindsym $mod+Ctrl+i exec icecat
-bindsym $mod+Shift+t exec ~/tor-browser/Browser/start-tor-browser
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+t exec proxychains gnome-terminal
+bindsym $mod+o exec ~/tor-browser_en-US/Browser/start-tor-browser
+bindsym $mod+t exec proxychains /opt/Telegram/Telegram
+bindsym $mod+Ctrl+p exec gnome-screenshot
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -156,54 +155,11 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-
-
-# Assign colors
-# ============================================================    =================
- 
- 
-set $bg           #2B2B2B
-set $bd           #3A3A3A
-set $bg-inactive   #0B0B0B
-set $bd-inactive   #111111
-set $bg-urgent     #EB2E2E
-set $text          #ffffff
-set $text-inactive #444444
-set $id            #222222
-set $seperator     #444444
-set $statusline    #888A85
- 
-client.focused          $bd           $bg          $text              $id
- client.unfocused        $bd-inactive  $bg-inactive $text-inact    ive $id
-client.focused_inactive $bd-inactive  $bg-inactive $text-inact    ive $id
-client.urgent           $bd-urgent    $bg-urgent   $text              $id
- 
-##############################################################    ######################################
-#
-
-
-
-
-
 bar {
         status_command i3status
 	position top
-
- colors {
-         background #000000
-         statusline #ffffff
-         separator #666666
-         focused_workspace  #555555 #3A3A3A #ffffff
-         active_workspace   #333333 #5f676a #ffffff
-         inactive_workspace #333333 #222222 #888888
-         urgent_workspace   #2f343a #900000 #ffffff
-         binding_mode       #2f343a #900000 #ffffff
-
 }
 
-}
+exec nm-applet
 exec --no-startup-id xcompmgr
-exec --no-startup-id nm-applet
-exec --no-startup-id volumeicon
-exec --no-startup-id feh --bg-scale ~/.config/i3/wall.jpg
-
+exec feh --bg-scale ~/.config/i3/wall.jpg
