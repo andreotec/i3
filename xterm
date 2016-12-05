@@ -1,0 +1,3 @@
+xterm -ls -bg gray15 -fg SteelBlue2  -fa 'Luxi Mono' -fs 11 -cr white -hc white -rightbar 
+
+#More colors https://critical.ch/xterm/
